@@ -59,18 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="Django发送电子邮件(快速上手版) Python里面有自带的发送邮件模块—-smtplib 相当方便但是Django也自带了一个轻量级的发送邮件模块(django.core.mail),以便在开发过程中轻松测试电子邮件发送，并为不能使用SMTP的平台提供支持。  快速上手首先需要在setting里面设置 12345678EMAIL_BACKEND = &apos;django.core.mail.bac">
+  <meta name="description" content="服务端根据不同的请求方式，可以做不同的处理，同时，根据不同的请求，还可以设计出不同风格的应用程序接口，这就引出了Representational State Transfer，英文缩写就是REST，中文意思是表述性状态转移（和没翻译差不多），可以理解为客户端和服务端的交互形式。而符合这种交互形式的接口设计，就被叫做RESTful API。这种风格有如下特点： 1. url 使用名词而不使用动词e">
+<meta name="keywords" content="Restful">
 <meta property="og:type" content="article">
-<meta property="og:title" content="restful">
-<meta property="og:url" content="https://seven142302.github.io/2019/08/02/restful/index.html">
+<meta property="og:title" content="理解RESTful API">
+<meta property="og:url" content="https://seven142302.github.io/2019/08/02/理解restful - 副本/index.html">
 <meta property="og:site_name" content="可乐鸡翅的博客">
-<meta property="og:description" content="Django发送电子邮件(快速上手版) Python里面有自带的发送邮件模块—-smtplib 相当方便但是Django也自带了一个轻量级的发送邮件模块(django.core.mail),以便在开发过程中轻松测试电子邮件发送，并为不能使用SMTP的平台提供支持。  快速上手首先需要在setting里面设置 12345678EMAIL_BACKEND = &apos;django.core.mail.bac">
+<meta property="og:description" content="服务端根据不同的请求方式，可以做不同的处理，同时，根据不同的请求，还可以设计出不同风格的应用程序接口，这就引出了Representational State Transfer，英文缩写就是REST，中文意思是表述性状态转移（和没翻译差不多），可以理解为客户端和服务端的交互形式。而符合这种交互形式的接口设计，就被叫做RESTful API。这种风格有如下特点： 1. url 使用名词而不使用动词e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T11:00:57.865Z">
+<meta property="og:updated_time" content="2019-08-03T03:19:49.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="restful">
-<meta name="twitter:description" content="Django发送电子邮件(快速上手版) Python里面有自带的发送邮件模块—-smtplib 相当方便但是Django也自带了一个轻量级的发送邮件模块(django.core.mail),以便在开发过程中轻松测试电子邮件发送，并为不能使用SMTP的平台提供支持。  快速上手首先需要在setting里面设置 12345678EMAIL_BACKEND = &apos;django.core.mail.bac">
-  <link rel="canonical" href="https://seven142302.github.io/2019/08/02/restful/">
+<meta name="twitter:title" content="理解RESTful API">
+<meta name="twitter:description" content="服务端根据不同的请求方式，可以做不同的处理，同时，根据不同的请求，还可以设计出不同风格的应用程序接口，这就引出了Representational State Transfer，英文缩写就是REST，中文意思是表述性状态转移（和没翻译差不多），可以理解为客户端和服务端的交互形式。而符合这种交互形式的接口设计，就被叫做RESTful API。这种风格有如下特点： 1. url 使用名词而不使用动词e">
+  <link rel="canonical" href="https://seven142302.github.io/2019/08/02/理解restful - 副本/">
 
 
 <script id="page.configurations">
@@ -79,7 +80,7 @@
   };
 </script>
 
-  <title>restful | 可乐鸡翅的博客</title>
+  <title>理解RESTful API | 可乐鸡翅的博客</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144933018-1"></script>
   <script>
@@ -266,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://seven142302.github.io/2019/08/02/restful/">
+    <link itemprop="mainEntityOfPage" href="https://seven142302.github.io/2019/08/02/理解restful - 副本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu-Seven">
@@ -280,7 +281,7 @@
       <header class="post-header">
 
         
-          <h2 class="post-title" itemprop="name headline">restful
+          <h2 class="post-title" itemprop="name headline">理解RESTful API
 
               
             
@@ -300,12 +301,37 @@
                 
               
 
-              <time title="创建时间：2019-08-02 18:55:05 / 修改时间：19:00:57" itemprop="dateCreated datePublished" datetime="2019-08-02T18:55:05+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 13:55:01" itemprop="dateCreated datePublished" datetime="2019-08-02T13:55:01+08:00">2019-08-02</time>
             </span>
           
             
 
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-03 11:19:49" itemprop="dateModified" datetime="2019-08-03T11:19:49+08:00">2019-08-03</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Restful/" itemprop="url" rel="index"><span itemprop="name">Restful</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -325,14 +351,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Django发送电子邮件-快速上手版"><a href="#Django发送电子邮件-快速上手版" class="headerlink" title="Django发送电子邮件(快速上手版)"></a>Django发送电子邮件(快速上手版)</h2><blockquote>
-<p>Python里面有自带的发送邮件模块—-smtplib 相当方便<br>但是Django也自带了一个轻量级的发送邮件模块(django.core.mail),以便在开发过程中轻松测试电子邮件发送，并为不能使用SMTP的平台提供支持。</p>
-</blockquote>
-<h4 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h4><p>首先需要在setting里面设置</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">EMAIL_BACKEND = <span class="string">'django.core.mail.backends.smtp.EmailBackend'</span></span><br><span class="line">EMAIL_USE_TLS = <span class="literal">True</span> <span class="comment">#是否使用TLS安全传输协议(用于在两个通信应用程序之间提供保密性和数据完整性。)</span></span><br><span class="line">EMAIL_USE_SSL = <span class="literal">False</span> <span class="comment">#是否使用SSL加密，qq企业邮箱要求使用</span></span><br><span class="line">EMAIL_HOST = <span class="string">'smtp.qq.com'</span>   </span><br><span class="line"><span class="comment">#发送邮件的邮箱 的 SMTP服务器,固定格式,如果是其他的邮箱则是'smtp.xx.com'</span></span><br><span class="line">EMAIL_PORT = <span class="number">25</span>     <span class="comment">#发件箱的SMTP服务器端口,默认 </span></span><br><span class="line">EMAIL_HOST_USER = <span class="string">'你的邮箱'</span>    <span class="comment">#发送邮件的邮箱地址,</span></span><br><span class="line">EMAIL_HOST_PASSWORD = <span class="string">'你的邮箱授权码'</span>         <span class="comment">#发送邮件的邮箱密码(这里使用的是授权码)</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001256&&id=28" target="_blank" rel="noopener">获取授权码的方法(qq邮箱)</a><br>接着在views视图里面就可以发送了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(request)</span>:</span></span><br><span class="line">    send_mail (</span><br><span class="line">        <span class="string">'xxxx'</span>,<span class="comment"># 标题</span></span><br><span class="line">        <span class="string">'xxxxx.'</span>,<span class="comment"># 内容</span></span><br><span class="line">        <span class="string">'xxxxxx@qq.com'</span>,<span class="comment"># 你的邮箱</span></span><br><span class="line">        [<span class="string">'xxxxx@163.com'</span>],<span class="comment"># 收件人邮箱</span></span><br><span class="line">        fail_silently=<span class="literal">False</span>,</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'ok'</span>)</span><br></pre></td></tr></table></figure>
+        <p> 服务端根据不同的请求方式，可以做不同的处理，同时，根据不同的请求，还可以设计出不同风格的应用程序接口，这就引出了Representational State Transfer，英文缩写就是REST，中文意思是表述性状态转移（和没翻译差不多），可以理解为客户端和服务端的交互形式。而符合这种交互形式的接口设计，就被叫做RESTful API。这种风格有如下特点：</p>
+<h5 id="1-url-使用名词而不使用动词"><a href="#1-url-使用名词而不使用动词" class="headerlink" title="1. url 使用名词而不使用动词"></a>1. url 使用名词而不使用动词</h5><pre><code>eg: /getlist/ #这样是不符合restful风格的
+    正确的应该是 /list/</code></pre><h5 id="2-GET用于查询，PUT、POST、DELETE用于修改"><a href="#2-GET用于查询，PUT、POST、DELETE用于修改" class="headerlink" title="2.GET用于查询，PUT、POST、DELETE用于修改"></a>2.GET用于查询，PUT、POST、DELETE用于修改</h5><h5 id="3-使用名词复数不使用单数"><a href="#3-使用名词复数不使用单数" class="headerlink" title="3.使用名词复数不使用单数"></a>3.使用名词复数不使用单数</h5><pre><code>eg: /student/ 应该是 /students/</code></pre><h5 id="4-在HTTP请求的head体里定义序列化类型"><a href="#4-在HTTP请求的head体里定义序列化类型" class="headerlink" title="4.在HTTP请求的head体里定义序列化类型"></a>4.在HTTP请求的head体里定义序列化类型</h5><pre><code>eg: Content-Type:application/json</code></pre><h5 id="5-请求的集合应设定好过滤条件、排序、字段、分页"><a href="#5-请求的集合应设定好过滤条件、排序、字段、分页" class="headerlink" title="5.请求的集合应设定好过滤条件、排序、字段、分页"></a>5.请求的集合应设定好过滤条件、排序、字段、分页</h5><pre><code>eg：/students?page=1&amp;size=10</code></pre><h5 id="6-接口要版本化"><a href="#6-接口要版本化" class="headerlink" title="6.接口要版本化"></a>6.接口要版本化</h5><pre><code>eg：/api/v1/students</code></pre><h5 id="7-要有HTTP状态码"><a href="#7-要有HTTP状态码" class="headerlink" title="7.要有HTTP状态码"></a>7.要有HTTP状态码</h5><h5 id="8-允许重写HTTP请求方法"><a href="#8-允许重写HTTP请求方法" class="headerlink" title="8.允许重写HTTP请求方法"></a>8.允许重写HTTP请求方法</h5><h5 id="9-aaaa"><a href="#9-aaaa" class="headerlink" title="9.aaaa"></a>9.aaaa</h5>
     </div>
 
     
@@ -340,9 +361,15 @@
     
 
     <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/Restful/" rel="tag"># Restful</a>
+          
+        </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/08/02/理解restful - 副本/" rel="next" title="理解RESTful API">
+              <a href="/2019/08/02/自我介绍/" rel="next" title="理解RESTful API">
                 <i class="fa fa-chevron-left"></i> 理解RESTful API
               </a>
             
@@ -351,8 +378,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/03/helloliao/" rel="prev" title="helloliao">
-                helloliao <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/02/restful/" rel="prev" title="restful">
+                restful <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -463,7 +490,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django发送电子邮件-快速上手版"><span class="nav-number">1.</span> <span class="nav-text">Django发送电子邮件(快速上手版)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快速上手"><span class="nav-number">1.0.1.</span> <span class="nav-text">快速上手</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-url-使用名词而不使用动词"><span class="nav-number">1.</span> <span class="nav-text">1. url 使用名词而不使用动词</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-GET用于查询，PUT、POST、DELETE用于修改"><span class="nav-number">2.</span> <span class="nav-text">2.GET用于查询，PUT、POST、DELETE用于修改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-使用名词复数不使用单数"><span class="nav-number">3.</span> <span class="nav-text">3.使用名词复数不使用单数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-在HTTP请求的head体里定义序列化类型"><span class="nav-number">4.</span> <span class="nav-text">4.在HTTP请求的head体里定义序列化类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-请求的集合应设定好过滤条件、排序、字段、分页"><span class="nav-number">5.</span> <span class="nav-text">5.请求的集合应设定好过滤条件、排序、字段、分页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-接口要版本化"><span class="nav-number">6.</span> <span class="nav-text">6.接口要版本化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-要有HTTP状态码"><span class="nav-number">7.</span> <span class="nav-text">7.要有HTTP状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-允许重写HTTP请求方法"><span class="nav-number">8.</span> <span class="nav-text">8.允许重写HTTP请求方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-aaaa"><span class="nav-number">9.</span> <span class="nav-text">9.aaaa</span></a></li></ol></div>
             
 
           </div>
